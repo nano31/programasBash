@@ -1,0 +1,16 @@
+#!/bin/bash
+# Comentarios acerca de lo que hace el script
+# Siempre comento mis scripts, si no hoy lo hago
+# y mañana ya no me acuerdo de lo que quise hacer
+echo "Introduzca su nombre y apellido:"
+read nombre apellido
+echo "Fecha y hora actual:"
+date
+echo "Su apellido y nombre es:"
+echo "$apellido $nombre"
+echo "Su usuario es: `whoami`"
+echo "Su directorio actual es:"
+echo "El contenido de $HOME es: $(ls $HOME)"
+echo "Ingrese su numero de legajo: "
+read legajo
+echo "Su numero de legajo es $legajo" 
