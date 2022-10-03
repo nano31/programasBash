@@ -1,11 +1,12 @@
 #! /bin/bash
 if [ $# -ne 1 ] then
     echo "No se paso el parámetro necesario"
-    exit 0
+    exit 1
 else
+
     for usuarios in $(cat /etc/passwd | cut -d: f1); do
         var=$(sudo find /home -user ${usuarios} -name "*$1" | wc -l)
         echo "USUARIO: $usuarios | CANTIDAD: $var" >> $HOME/reporte.txt
     done
 fi
-exit 1
+exit 0
