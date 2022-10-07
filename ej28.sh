@@ -23,7 +23,7 @@ else
         done
         echo "Cantidad de archivos que cumplen la condicion: $cont"
     else
-        echo "Erro 4, el direcotorio no existe"
+        echo "Error 4, el directorio no existe"
         exit 4
     fi
 fi
