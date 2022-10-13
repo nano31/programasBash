@@ -3,7 +3,7 @@ if [ $# -ne 0 ] then
     exit 1
 else
     echo "Menu de opciones"
-    select opcion in $(ls) salir; do
+    select opcion in $(ls); do
         case $opcion in
             "salir")
                 echo "Saliendo"

@@ -1,5 +1,5 @@
 #! /bin/bash
-if [ $# -ne 1 ] then
+if [ $# -ne 1 ]; then
     echo "No se paso el parámetro necesario"
     exit 1
 else
