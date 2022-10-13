@@ -14,14 +14,17 @@ else
     cantInex=0
     vector=($*) #almacena en el arreglo todos los parametros recibidos
     for i in ${#vector[@]}; do
-        if [ -e ${vector[$i]} ] then
-            echo "No existe"
-            cantInex=$(expr $cantInex + 1)
-        else
-            if [ -d ${vector[$i]} ] then
-                echo "Existe y es un directorio"
-            elif [ -f ${vector[$i]} ] then
-                echo "Existe y es un archivo"
+
+        if [ $i % 2 -ne 0 ]; then
+            if [ -e ${vector[$i]} ] then
+                echo "No existe"
+                cantInex=$(expr $cantInex + 1)
+            else
+                if [ -d ${vector[$i]} ] then
+                    echo "Existe y es un directorio"
+                elif [ -f ${vector[$i]} ] then
+                    echo "Existe y es un archivo"
+                fi
             fi
         fi
     done
