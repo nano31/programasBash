@@ -4,9 +4,9 @@ if [ $# -eq 0 ]; then
     echo "el programa necesita 1 parametro"
     exit 1
 else
-    users=()
+    users=($(cat /etc/passwd | grep $1 | cut -d: -f1))
     # IFS=$""
-    for user in $(cat /etc/passwd | grep $1 | cut -d: -f1); do
+    for user in $users; do
         users[${#users[*]}]=$user
     done
 
@@ -21,7 +21,8 @@ else
                 echo "esta"
                 contador=$(expr $contador + 1)
                 #el error se encuentra en estas líneas, preguntar
-                echo -e "Usuario: ${usuarioConectado} \t Fecha:"`date + %d%m%y`" \t Hora:"`%H:%M`"" >> $HOME/hola/access$1.txt
+                echo -e "Usuario: ${usuarioConectado} Fecha: $(date)" >> $HOME/hola/access$1.txt
+                #$(users) $(date) >> archivo.log
             fi
             sleep 30s
         done

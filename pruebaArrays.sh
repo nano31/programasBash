@@ -33,7 +33,7 @@ function sub(){
 }
 
 sub
-echo "Se imprimen todos los elementos del array"
+pruebaArrays.shecho "Se imprimen todos los elementos del array"
 for i in "${array[@]}"
 do
     echo $i
