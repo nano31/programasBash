@@ -1,4 +1,5 @@
 # ! /bin/bash
+# EJERCICIO 17 DEL PARCIAL
 if [ $# -eq 0 ]; then
     echo "el programa necesita 1 parametro"
     exit 1
